@@ -8,8 +8,12 @@ function getallcookies(){
    // Progression 2: using setTimeout() - use 1000 units for time parameter
 function getcookiesDelayed(){
    setTimeout(()=>{
+    let result;
       let cookies=getallcookies();
-      console.log(cookies);
+      cookies.forEach((cookie)=>{
+        result=result+`<li>${cookie.name}</li>`
+      });
+      document.body.innerHTML=result;
     },1000);
 }
 
